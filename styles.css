@@ -1,0 +1,23 @@
+
+body  {
+  font-family: sans-serif;
+  background: linear-gradient(to bottom, blue, white)
+}
+
+#donutStorelist  {
+  font: sans-serif;
+  background-color: #efe;
+  border-collapse: collapse;
+  empty-cells: show;
+  border: 1px solid #7a7;
+}
+
+footer  {
+  position: relative;
+  height: 50px;
+  background-color: #668284;
+  text-align: center;
+  color: #ffffff;
+}
+
+
