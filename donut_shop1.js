@@ -1,5 +1,6 @@
 
 (function() {
+
   window.storesArray = [];
   var storesArray = window.storesArray;
   var form = document.getElementById('newStoreform');
@@ -14,25 +15,42 @@
 
   Store.prototype.dailyDonutstoMake = function()  {
     var perDay = 0;
-    for (var time = 0; time <=11; time ++) {
+    this.hourlyTotals =[];
+    for (var time = 0; time <11; time ++) {
       var hourlyDonuts = Math.floor((Math.random() * (this.maxCustperHour - this.minCustperHour) + this.minCustperHour) * this.avgOrder);
-      console.log(hourlyDonuts)
       this.hourlyTotals.push(hourlyDonuts);
       perDay += hourlyDonuts;
     }
     return perDay;
-  }
+  };
 
   Store.prototype.render = function()  {
-    var dailyDonuts = this.dailyDonutstoMake();
-    for ( var time = 0; time <= this.hourlyTotals.length; time++) {
-      var el = document.createElement('td');
-      el.textContent = this.hourlyTotals[time];
-      var elTr = document.getElementById(this.storeLoc);
-      elTr.appendChild(el);
+    var toMake = this.dailyDonutstoMake();
+    var row = document.createElement('tr');
+
+    var data = document.createElement('td');
+
+    data.textContent = this.storeLoc;
+
+    row.appendChild(data);
+
+    for ( var time = 0; time < this.hourlyTotals.length; time++) {
+
+      data = document.createElement('td');
+
+      data.textContent = this.hourlyTotals[time];
+
+      row.appendChild(data);
+
     }
-    el.textContent = dailyDonuts;
-    elTr.appendChild(el);
+
+    data = document.createElement('td');
+
+    data.textContent = toMake;
+
+    row.appendChild(data);
+    return row;
+
   };
 
   storesArray.push(new Store("branch1", 8, 43, 4.5));
@@ -41,33 +59,34 @@
   storesArray.push(new Store("branch4", 2, 28, 1.25));
   storesArray.push(new Store("branch5", 8, 58, 3.75));
 
-  window.renderStoreData = function() {
-    var elTable = document.getElementById('donutStorelist');
+
+  window.tablerenderStoreData = function() {
+    var elTable = document.getElementById('tableBody');
+    elTable.textContent = '';
     storesArray.forEach(function(store) {
       elTable.appendChild(store.render());
     });
   }
 
-  var eventFormSubmit = function calculateInput(ev) {
-    console.log("the button was cliked");
+  tablerenderStoreData();
+
+  var eventFormSubmit = function(ev) {
     ev.preventDefault();
-    console.log("did not break");
 
-    var storeLoc = document.getElementById('newStorelocation').value;
-    var inputMincustPerhour = document.getElementById('newMincustperHour').value;
-    var inputMaxcustPerhour = document.getElementById('newMaxcustperHour').value;
-    var inputAvgorder = document.getElementById('newAvgorder').value;
+    var storeLoc = document.getElementById('newStoreloc').value;
+    var inputMincustPerhour = Number.parseInt(document.getElementById('minCustperHour').value);
+    var inputMaxcustPerhour = Number.parseInt(document.getElementById('maxCustperHour').value);
+    var inputAvgorder = Number.parseFloat(document.getElementById('avgOrder').value);
 
-    var newStore = new Store(storeLoc, minCustperHour, maxCustperHour, avgOrder)
+    var newStore = new Store(storeLoc, inputMincustPerhour, inputMaxcustPerhour, inputAvgorder);
 
-    userInput.numDonuts();
-    hourlyTotals.push(userInput);
-
-    newStore.render();
+    //userInput.numDonuts();
+    storesArray.push(newStore);
+    tablerenderStoreData();
 
   };
 
   form.addEventListener('submit', eventFormSubmit, false);
-  window.renderStoreData();
+  window.Store = Store;
 })();
 

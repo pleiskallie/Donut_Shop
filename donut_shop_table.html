@@ -42,16 +42,16 @@
   <form name="newStorelocation" id="newStoreform"><strong><small>
 
       <label for="storeLoc">Location:</label>
-      <input name="newStoreloc" type ="text">
+      <input id="newStoreloc" name="newStoreloc" type ="text">
 
       <label for="minCustperHour">Min Customers Per Hour:</label>
-      <input name="newMincustPerhour" type="text">
+      <input id="minCustperHour" name="newMincustPerhour" type="text">
 
       <label for="maxCustperHour">Max Customers Per Hour:</label>
-      <input name="newMaxcustPerhour" type="text">
+      <input id="maxCustperHour" name="newMaxcustPerhour" type="text">
 
       <label for="avgOrder">Avg Donuts Purchased:</label>
-      <input name="newAvgorder" type="text">
+      <input id="avgOrder" name="newAvgorder" type="text">
 
       <p></p>
       <p></p>
@@ -70,12 +70,14 @@
       <p></p>
 
     <table id="donutStorelist" table border="3">
-     <strong><tr><th></th><td>7:00 AM</td><td>8:00 AM</td><td>9:00 AM</td><td>10:00 AM</td><td>11:00 AM</td><td>12:00 PM</td><td>1:00 PM</td><td>2:00 PM</td><td>3:00 PM</td><td>4:00 PM</td><td>5:00 PM</td><td>6:00 PM</td><td>TOTAL</strong></td></tr>
-      <tr id="branch1"><th>@DOWNTOWN</th></tr>
-      <tr id="branch2"><th>@CAPITOL HILL</th></tr>
-      <tr id="branch3"><th>@SOUTH LAKE UNION</th></tr>
-      <tr id="branch4"><th>@WEDGEWOOD</th></tr>
-      <tr id="branch5"><th>@BALLARD</th></tr>
+     <thead>
+      <tr>
+        <th></th><td>7:00 AM</td><td>8:00 AM</td><td>9:00 AM</td><td>10:00 AM</td><td>11:00 AM</td><td>12:00 PM</td><td>1:00 PM</td><td>2:00 PM</td><td>3:00 PM</td><td>4:00 PM</td><td>5:00 PM</td><td>TOTAL</td>
+      </tr>
+     </thead>
+      <tbody id="tableBody">
+
+      </tbody>
     </table>
 
       <p></p>
@@ -97,5 +99,6 @@
 </center>
 
 <script src="donut_shop1.js" type="text/javascript"></script>
+<!-- <script src="events.js"></script> -->
 </body>
 </html>
