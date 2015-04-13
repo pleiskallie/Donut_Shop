@@ -1,23 +1,116 @@
 
-body  {
-  font-family: sans-serif;
-  background: linear-gradient(to bottom, blue, white)
+html {
+  margin: 0px;
+  padding: 0px;
+  border: 0;
+  font-family: "Port Lligat Sans", "Times New Roman", sans-serif;
+  vertical-align: baseline;
+  background-image: url("https://s-media-cache-ak0.pinimg.com/736x/a3/9d/92/a39d923b2c6c94e507d4fc012e3a9635.jpg");
+
 }
 
-#donutStorelist  {
-  font: sans-serif;
-  background-color: #efe;
-  border-collapse: collapse;
-  empty-cells: show;
-  border: 1px solid #7a7;
+body {
+  font-family: "Port Lligat Sans", "Times New Roman", sans-serif;
+  color: #e0d6c0;
 }
 
-footer  {
+h1  {
+  color: #e0d6c0;
+  font-weight: bold;
+  font-size: 2.5em;
   position: relative;
-  height: 50px;
-  background-color: #668284;
-  text-align: center;
-  color: #ffffff;
 }
 
+h2  {
+  color: #e0d6c0;
+  font-weight: bold;
+  font-size: 2em;
+  position: relative;
+}
 
+table {
+  width: 90%;
+  display: inline-block, center;
+  font-family:"Port Lligat Sans", "Times New Roman", sans-serif;
+  text-align: center;
+  font-size: 1em;
+  border: 15px solid ##8C7564;
+  border-spacing: 1px;
+  background-color: #986B41;
+  padding-bottom: 5px;
+}
+
+form {
+  display: inline-block;
+  margin-top: 10em;
+  width: 90%;
+  height: 90%;
+  background-color: #A7BAC5;
+  padding: .25em .25em .25em .25em;
+  margin-top: .25em;
+  border: 20px solid #868E8E;
+  border-radius: 5px;
+  font-family: "Port Lligat Sans", "Times New Roman", sans-serif;
+  font-size: 1em;
+  color: #fff;
+}
+
+form button {
+  background-color: #6B5754;
+  padding: .25em .25em .25em .25em;
+  margin-top: .10em;
+  border: 5px solid #fff;
+  border-radius: 5px;
+  font-family: "Port Lligat Sans", "Times New Roman", sans-serif;
+  font-size: 1em;
+  color: #fff;
+  position: absolute;
+  }
+
+input {
+    background-color: #8C7564;
+    font-family: "Port Lligat Sans", "Times New Roman", sans-serif;
+    font-size: 1em;
+    border-radius: .25em;
+    border-spacing: .25em;
+    padding: .25em;
+    margin-bottom: .25em;
+   float: center;
+}x
+
+label {
+  background-color: #EEE6D9;
+    font-family: "Port Lligat Sans", "Times New Roman", sans-serif;
+    font-size: 1em;
+    border-radius: 5em;
+    border-spacing: 2em;
+    padding: .2em;
+    margin-bottom: 2em;
+   float: center;
+
+}
+
+button {
+    border: 10px solid #583A52;
+    color:#DD735B;
+    text-decoration:none;
+    background: # url(icon.png) no-repeat scroll 5px center;
+    position: relative;
+}
+
+p {
+  font-family: "Port Lligat Sans", "Times New Roman", sans-serif;
+  color:#8C7564;
+  font-size: 1.5em;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  height: 50px;
+  width: 50%;
+  min-width: 500px;
+  color: #8C7564;
+  font-size: 1.5em;
+  background-color: #1B242B;
+}
