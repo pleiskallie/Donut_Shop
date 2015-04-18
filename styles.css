@@ -114,3 +114,27 @@ footer{
   font-size: 1.5em;
   background-color: #1B242B;
 }
+
+body {
+  background: #222;
+  text-align: center;
+}
+
+canvas {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+canvas:active {
+  cursor: pointer;
+  cursor: -webkit-grabbing;
+}
+.grow:hover
+{
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+}
+
+
